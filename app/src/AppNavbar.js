@@ -17,16 +17,12 @@ export default class AppNavbar extends Component {
 
   render() {
     return <Navbar color="dark" dark expand="md">
-      <NavbarBrand tag={Link} to="/">Home</NavbarBrand>
+      <NavbarBrand tag={Link} to="/">The Nanny App</NavbarBrand>
       <NavbarToggler onClick={this.toggle}/>
       <Collapse isOpen={this.state.isOpen} navbar>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink
-              href="https://twitter.com/oktadev">@oktadev</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="https://github.com/oktadeveloper/okta-spring-boot-react-crud-example">GitHub</NavLink>
+            <NavLink href="https://github.com/bworth94/nannyAppReboot">GitHub Repo</NavLink>
           </NavItem>
         </Nav>
       </Collapse>

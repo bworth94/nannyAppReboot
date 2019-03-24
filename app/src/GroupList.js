@@ -60,7 +60,7 @@ class GroupList extends Component{
               <AppNavbar/>
               <Container fluid>
                 <div className="float-right">
-                  <Button color="success" tag={Link} to="/groups/new">Add Group</Button>
+                  <Button color="primary" tag={Link} to="/groups/new">Add Group</Button>
                 </div>
                 <h3>Todays Tasks</h3>
                 <Table className="mt-4">

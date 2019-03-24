@@ -81,21 +81,9 @@ class GroupEdit extends Component {
                 <Input type="text" name="nannyNotes" id="nannyNotes" value={item.nannyNotes || ''}
                         onChange={this.handleChange} autoComplete="nannyNotes"/>
             </FormGroup>
-            <div className="row">
-            <FormGroup className="col-md-5 mb-3">
-              <Label for="country">Country</Label>
-              <Input type="text" name="country" id="country" value={item.country || ''}
-                     onChange={this.handleChange} autoComplete="address-level1"/>
-            </FormGroup>
-            <FormGroup className="col-md-3 mb-3">
-              <Label for="country">Postal Code</Label>
-              <Input type="text" name="postalCode" id="postalCode" value={item.postalCode || ''}
-                     onChange={this.handleChange} autoComplete="address-level1"/>
-            </FormGroup>
-          </div>
           <FormGroup>
             <Button color="primary" type="submit">Save</Button>{' '}
-            <Button color="secondary" tag={Link} to="/groups">Cancel</Button>
+            <Button color="danger" tag={Link} to="/groups">Cancel</Button>
           </FormGroup>
         </Form>
       </Container>
