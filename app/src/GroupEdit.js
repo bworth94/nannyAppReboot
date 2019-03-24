@@ -6,12 +6,10 @@ import AppNavbar from './AppNavbar';
 class GroupEdit extends Component {
 
   emptyItem = {
-    name: '',
-    address: '',
-    city: '',
-    stateOrProvince: '',
-    country: '',
-    postalCode: ''
+    task: '',
+    timeDue: '',
+    parentNotes: '',
+    nannyNotes: ''
   };
 
   constructor(props) {
@@ -56,7 +54,7 @@ class GroupEdit extends Component {
 
   render() {
     const {item} = this.state;
-    const title = <h2>{item.id ? 'Edit Group' : 'Add Group'}</h2>;
+    const title = <h2>{item.id ? 'Make Notes' : 'Add Task'}</h2>;
 
     return <div>
       <AppNavbar/>
@@ -64,26 +62,26 @@ class GroupEdit extends Component {
         {title}
         <Form onSubmit={this.handleSubmit}>
           <FormGroup>
-            <Label for="name">Name</Label>
-            <Input type="text" name="name" id="name" value={item.name || ''}
-                   onChange={this.handleChange} autoComplete="name"/>
+            <Label for="task">Task</Label>
+            <Input type="text" name="task" id="task" value={item.task || ''}
+                   onChange={this.handleChange} autoComplete="task"/>
           </FormGroup>
           <FormGroup>
-            <Label for="address">Address</Label>
-            <Input type="text" name="address" id="address" value={item.address || ''}
-                   onChange={this.handleChange} autoComplete="address-level1"/>
+            <Label for="timeDue">Time Due</Label>
+            <Input type="text" name="timeDue" id="timeDue" value={item.timeDue || ''}
+                   onChange={this.handleChange} autoComplete="timeDue-level1"/>
           </FormGroup>
           <FormGroup>
-            <Label for="city">City</Label>
-            <Input type="text" name="city" id="city" value={item.city || ''}
-                   onChange={this.handleChange} autoComplete="address-level1"/>
+            <Label for="parentNotes">Parent Notes</Label>
+            <Input type="text" name="parentNotes" id="parentNotes" value={item.parentNotes || ''}
+                   onChange={this.handleChange} autoComplete="parentNotes"/>
           </FormGroup>
-          <div className="row">
-            <FormGroup className="col-md-4 mb-3">
-              <Label for="stateOrProvince">State/Province</Label>
-              <Input type="text" name="stateOrProvince" id="stateOrProvince" value={item.stateOrProvince || ''}
-                     onChange={this.handleChange} autoComplete="address-level1"/>
+            <FormGroup>
+                <Label for="nannyNotes">Nanny Notes</Label>
+                <Input type="text" name="nannyNotes" id="nannyNotes" value={item.nannyNotes || ''}
+                        onChange={this.handleChange} autoComplete="nannyNotes"/>
             </FormGroup>
+            <div className="row">
             <FormGroup className="col-md-5 mb-3">
               <Label for="country">Country</Label>
               <Input type="text" name="country" id="country" value={item.country || ''}

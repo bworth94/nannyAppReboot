@@ -39,17 +39,14 @@ class GroupList extends Component{
         }
 
         const groupList= groups.map(group => {
-            const address = `${group.address || ''} ${group.city || ''} ${group.stateOrProvince || ''}`;
+            const timeDue = `${group.timeDue || ''}`;
+            const parentNotes = `${group.parentNotes || ''}`;
+            const nannyNotes =`${group.nannyNotes || ''}`;
             return <tr key={group.id}>
-                <td style={{whiteSpace: 'nowrap'}}>{group.name}</td>
-                <td>{address}</td>
-                <td>{group.events.map(event => {
-                    return <div key={event.id}>{new Intl.DateTimeFormat('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: '2-digit'
-                    }).format(new Date(event.date))}: {event.title}</div>
-                })}</td>
+                <td style={{whiteSpace: 'nowrap'}}>{group.task}</td>
+                <td>{timeDue}</td>
+                <td>{parentNotes}</td>
+                <td>{nannyNotes}</td>
                 <td>
                     <ButtonGroup>
                         <Button size="sm" color="primary" tag={Link} to={"/groups/" + group.id}>Edit</Button>
@@ -65,13 +62,14 @@ class GroupList extends Component{
                 <div className="float-right">
                   <Button color="success" tag={Link} to="/groups/new">Add Group</Button>
                 </div>
-                <h3>My JUG Tour</h3>
+                <h3>Todays Tasks</h3>
                 <Table className="mt-4">
                   <thead>
                   <tr>
-                    <th width="20%">Name</th>
-                    <th width="20%">Location</th>
-                    <th>Events</th>
+                    <th width="20%">Task</th>
+                    <th width="20%">Time Due</th>
+                    <th width="20%">Parent Notes</th>
+                    <th width="20%">Nanny Notes</th>
                     <th width="10%">Actions</th>
                   </tr>
                   </thead>
