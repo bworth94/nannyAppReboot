@@ -3,12 +3,17 @@ import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import AppNavbar from './AppNavbar';
 import { Link } from 'react-router-dom';
 
+//setting state and props
+
 class GroupList extends Component{
     constructor(props) {
         super(props);
         this.state = {groups: [], isLoading: true};
         this.remove = this.remove.bind(this);
     }
+
+
+    //using fetch to communicate with API
 
     componentDidMount(){
         this.setState({isLoading: true});
@@ -30,6 +35,8 @@ class GroupList extends Component{
             this.setState({groups: updatedGroups});
         });
     }
+
+    //Rending everything for the frontend
 
     render(){
         const {groups, isLoading} = this.state;

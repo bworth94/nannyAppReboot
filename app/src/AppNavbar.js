@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
+
+//setting state and props
+
 export default class AppNavbar extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +12,8 @@ export default class AppNavbar extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
+  //creating navbar 
+  
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen

@@ -3,6 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 import AppNavbar from './AppNavbar';
 
+//setting state props and values and binding with handleChange and handleSubmit
+
 class GroupEdit extends Component {
 
   emptyItem = {
@@ -21,12 +23,16 @@ class GroupEdit extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  //Using fetch to communicate with the API
+
   async componentDidMount() {
     if (this.props.match.params.id !== 'new') {
       const group = await (await fetch(`/api/group/${this.props.match.params.id}`)).json();
       this.setState({item: group});
     }
   }
+
+  //setting parameters for handleChange
 
   handleChange(event) {
     const target = event.target;
@@ -37,6 +43,7 @@ class GroupEdit extends Component {
     this.setState({item});
   }
 
+  //using fetch to communicate with api
   async handleSubmit(event) {
     event.preventDefault();
     const {item} = this.state;
@@ -52,6 +59,8 @@ class GroupEdit extends Component {
     this.props.history.push('/groups');
   }
 
+  //rendering for the front end
+  
   render() {
     const {item} = this.state;
     const title = <h2>{item.id ? 'Make Notes' : 'Add Task'}</h2>;
