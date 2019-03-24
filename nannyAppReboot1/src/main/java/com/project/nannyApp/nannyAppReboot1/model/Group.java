@@ -18,12 +18,10 @@ public class Group {
     @GeneratedValue
     private Long id;
     @NonNull
-    private String name;
-    private String address;
-    private String city;
-    private String stateOrProvince;
-    private String country;
-    private String postalCode;
+    private String task;
+    private String timeDue;
+    private String parentNotes;
+    private String nannyNotes;
     @ManyToOne(cascade=CascadeType.PERSIST)
     private User user;
 

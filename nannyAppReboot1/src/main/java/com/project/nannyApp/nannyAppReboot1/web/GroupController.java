@@ -33,7 +33,7 @@ import com.project.nannyApp.nannyAppReboot1.model.GroupRepository;
 	}
 	
 	@GetMapping("/groups")
-	Collection<Group> groups() {
+	Collection <Group> groups() {
 		return groupRepository.findAll();
 	}
 	
